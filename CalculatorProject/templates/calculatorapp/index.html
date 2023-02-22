@@ -29,6 +29,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#instruction">Instruction</a>
+              </li>
           </ul>
         </div>
       </nav>
@@ -41,7 +44,7 @@
                 <img class="img-fluid" src="{% static 'cal1.jpg'%}">
                 <div class="card">
                     <div class="card-body">
-                        <form action="" method="">
+                        <form action="{% url 'submitquery' %}" method="GET">
                             <div class="form-group">
                                 <input type="search" name="query" id="query" class="form-control">
                             </div>
@@ -70,6 +73,22 @@
                 <p class="lead" style="text-align: center;">
                     This App can perform basic calculation
                 </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"  style="margin: 1rem auto 0 auto;">
+                <p class="display-4" id="instruction" name="about" style="text-align: center;">
+                    Instruction
+                </p>
+                <hr>
+                <ul class="list-group">
+                    <li class="list-group-item"> + Addition </li>
+                    <li class="list-group-item"> - Substraction </li>
+                    <li class="list-group-item"> * Multipication </li>
+                    <li class="list-group-item"> / Division </li>
+                    <li class="list-group-item"> // FloorDivision </li>
+                    <li class="list-group-item"> () Brackets </li>
+                  </ul>
             </div>
         </div>
     </div>

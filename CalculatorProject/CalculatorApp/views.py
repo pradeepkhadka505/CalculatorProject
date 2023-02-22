@@ -4,3 +4,7 @@ from django.http import HttpResponse, JsonResponse
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
+
+def submit_query(request):
+    q = request.GET['query']
+    return HttpResponse(q)

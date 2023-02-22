@@ -7,4 +7,21 @@ def index(request):
 
 def submit_query(request):
     q = request.GET['query']
-    return HttpResponse(q)
+
+    try:
+        ans = eval(q)
+        my_dict = {
+            "q" : q,
+            "ans": ans,
+            "error": False,
+            "result" : True
+
+        }
+        return render(request, 'index.html', context = my_dict)
+    except:
+        my_dict ={
+            "error": True,
+            "result": False
+
+        }
+        return render(request, 'index.html', context= my_dict)
